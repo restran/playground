@@ -16,7 +16,7 @@
     <![endif]-->
 </head>
 <body>
-<div class="navbar navbar-default navbar-fixed-top nav-header-bar" role="banner">
+<div class="navbar navbar-default navbar-fixed-top nav-header-bar navbar-transparent" role="banner">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,9 +45,6 @@
                     <a href="#">真实故事</a>
                 </li>
                 <li>
-                    <a href="#">在线电台</a>
-                </li>
-                <li>
                     <a href="#">关于我们</a>
                 </li>
                 <li>
@@ -61,7 +58,7 @@
 <div class="main-content">
     <section class="section-header">
         <div class="parallax pattern-image">
-            <img src="https://ununsplash.imgix.net/photo-1427434846691-47fc561d1179?fit=crop&amp;fm=jpg&amp;h=700&amp;q=75&amp;w=1050"
+            <img src="assets/img/bg.jpeg"
                  style="transform: translate3d(0px, 0px, 0px);">
             <div class="container">
                 <div class="content">
@@ -231,11 +228,13 @@
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic10.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic6.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                             </div>
@@ -243,16 +242,19 @@
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic11.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic1.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic9.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                             </div>
@@ -260,11 +262,13 @@
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic2.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                                 <div class="card">
                                     <a href="#">
                                         <img alt="..." src="assets/img/pic4.jpg">
+                                        <div class="story-title">这是故事的标题</div>
                                     </a>
                                 </div>
                             </div>
@@ -473,6 +477,18 @@
 <script src="assets/vendors/jquery-1.11.2.min.js"></script>
 <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/vendors/vuejs/vue.min.js"></script>
-
+<script>
+    var navbar = $('.navbar');
+    // 导航栏，随着滚动，慢慢出现
+    $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+        console.log(scrollTop);
+        if (scrollTop <= 600) {
+            navbar.addClass('navbar-transparent');
+        } else {
+            navbar.removeClass('navbar-transparent');
+        }
+    });
+</script>
 </body>
 </html>
